@@ -9,6 +9,11 @@ class Content extends React.Component {
     render() {
         
         switch(this.props.selectedNavIndex) {
+            
+            default: 
+                return(
+                    <About />
+                    )
             case 0:
                 return(
                     <About />
@@ -22,10 +27,6 @@ class Content extends React.Component {
                     <Contact />
                     );
         }
-        
-        return(
-            <About />
-            );
     }
     
 }
