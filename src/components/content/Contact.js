@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Projects extends React.Component {
+class Contact extends React.Component {
     render() {
         return (
             <div className="content-area">
-                Projects
+                <p>Contact</p>
             </div>
         );
     }
 }
 
-export default Projects;
+export default Contact;

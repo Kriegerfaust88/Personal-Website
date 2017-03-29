@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css'
+import '../css/App.css'
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import Content from './Content';
+import Content from './content/Content';
 import Title from './Title';
 import Navigation from './Navigation';
 
@@ -27,10 +27,10 @@ class App extends Component {
       <div className="App">
         <Grid>
           <Row>
-            <Col className="title-column" xs={12} md={4}>
+            <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
               <Title />
             </Col>
-            <Col className="nav-column" xs={12} md={8}>
+            <Col className="nav-column" xs={12} sm={8} md={8} lg={8}>
               <Row>
                 <Navigation selectedNavIndex={this.state.selectedNavIndex} changeIndex={this.changeIndex} />
               </Row>
