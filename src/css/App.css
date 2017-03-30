@@ -1,9 +1,9 @@
 .App {
-  background-color: black;
+  background-color: #333333;
   padding: 20px;
   padding-bottom: 50px;
   margin-top: 50px;
-  min-height: 550px;
+  min-height: 600px;
 }
 
 .title-area {
@@ -15,6 +15,22 @@
 
 .navigation {
   padding: 20px;
+  color: white;
+}
+
+.content-area {
+  padding: 15px;
+  margin-left: 50px;
+  margin-top: 20px;
+  color: white;
+}
+
+.content-area p {
+  font-size: 20px;
+}
+
+.content-area h2 {
+  font-family: bebas-neue-regular;
 }
 
 .about-content-area {
@@ -44,21 +60,13 @@
   color: white;
 }
 
-.projects-content-area p, h3 {
+.list-of-projects p{
   color: white;
+  font-size: 16px;
 }
 
-.contact-content-area h2 {
-  font-family: bebas-neue-regular;
-  color: white;
-}
-
-.contact-content-area p, h3 {
-  color: white;
-}
-
-.list-of-projects .li {
-  color: white;
+a {
+  color: #60ccff;
 }
 
 @font-face {

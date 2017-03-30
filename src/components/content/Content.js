@@ -1,13 +1,11 @@
 import React from 'react';
 
-import About from './About-Content';
-import Projects from './Projects-Content';
-import Contact from './Contact-Content';
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
 
 class Content extends React.Component {
-
     render() {
-
         switch (this.props.selectedNavIndex) {
 
             default:
@@ -20,7 +18,6 @@ class Content extends React.Component {
                 return (<Contact/>);
         }
     }
-
 }
 
 export default Content;

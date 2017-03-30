@@ -3,9 +3,7 @@ import { Image } from 'react-bootstrap';
 import logo from '../logo.svg';
 
 class Title extends React.Component {
-    
     render() {
-        
         return (
             <div className="title-area">
                 <h1>

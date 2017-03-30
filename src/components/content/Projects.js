@@ -19,12 +19,14 @@ class Projects extends React.Component {
     }
 
     loadProjects = () => {
-        this.setState({projects: projectList});
+        this.setState({
+            projects: projectList
+        });
     }
 
     render() {
         return (
-            <div className="projects-content-area">
+            <div className="content-area">
                 <h2>Projects</h2>
                 <ul className="list-of-projects">
                     {Object.keys(this.state.projects).map(key => <Project key={key} details={this.state.projects[key]}/>)
