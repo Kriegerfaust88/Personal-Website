@@ -1,12 +1,15 @@
 .App {
-  background-color: #f4f4f4;
+  background-color: black;
   padding: 20px;
   padding-bottom: 50px;
   margin-top: 50px;
+  min-height: 550px;
 }
 
 .title-area {
+  font-family: bebas-neue-regular;
   text-align: center;
+  color: white;
   padding: 20px;
 }
 
@@ -14,20 +17,53 @@
   padding: 20px;
 }
 
-.content-area {
-  background-color: #ffffff;
+.about-content-area {
   padding: 15px;
   margin-left: 50px;
   margin-top: 20px;
 }
 
-.content-area p {
-  font-size: 16px;
+.about-content-area p {
+  font-size: 20px;
+  color: white;
+}
+
+.about-content-area h2 {
+  font-family: bebas-neue-regular;
+  color: white;
+}
+
+.projects-content-area {
+  padding: 15px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.projects-content-area h2 {
+  font-family: bebas-neue-regular;
+  color: white;
+}
+
+.projects-content-area p, h3 {
+  color: white;
+}
+
+.contact-content-area h2 {
+  font-family: bebas-neue-regular;
+  color: white;
+}
+
+.contact-content-area p, h3 {
+  color: white;
+}
+
+.list-of-projects .li {
+  color: white;
 }
 
 @font-face {
-  font-family: "bebasneueregular";
-  src: url("./fonts/BebasNeue-Regular.ttf") format("ttf");
+  font-family: "bebas-neue-regular";
+  src: url("./fonts/BebasNeue-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
