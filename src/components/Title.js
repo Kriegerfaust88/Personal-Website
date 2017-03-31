@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
-import logo from '../logo.svg';
+import profilePic from './../profilePic.jpg';
 
 class Title extends React.Component {
     render() {
@@ -9,7 +9,7 @@ class Title extends React.Component {
                 <h1>
                     Daniel Schroeder
                 </h1>
-                <Image src={logo} circle/>
+                <Image src={profilePic} circle responsive/>
             </div>
             );
     }

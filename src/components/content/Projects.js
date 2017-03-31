@@ -4,7 +4,7 @@ import Project from './Project';
 import {
     filterRepos
 }
-from '/home/ubuntu/workspace/src/helpers';
+from '../../helpers';
 
 import axios from 'axios';
 

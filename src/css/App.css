@@ -1,9 +1,14 @@
+body {
+  background-color: #333333;
+}
+
 .App {
   background-color: #333333;
   padding: 20px;
   padding-bottom: 50px;
   margin-top: 50px;
-  min-height: 600px;
+  /*min-height: 600px;*/
+  min-height: 500px;
 }
 
 .title-area {
