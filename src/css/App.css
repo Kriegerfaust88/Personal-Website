@@ -65,6 +65,16 @@
   font-size: 16px;
 }
 
+.projectPanel {
+  background-color: #232323;
+}
+
+.projectExpandButton {
+  color: white;
+  background-color: #232323;
+  float: right;
+}
+
 a {
   color: #60ccff;
 }

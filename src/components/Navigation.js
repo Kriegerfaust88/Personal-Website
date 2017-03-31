@@ -4,7 +4,7 @@ import { Nav, NavItem } from 'react-bootstrap';
 class Navigation extends React.Component {
     render() {
         return (
-            <Nav className="navigation" bsStyle="pills" justified activeKey={this.props.selectedNavIndex} onSelect={this.props.changeIndex} pullRight>
+            <Nav className="navigation" bsStyle="pills" pullRight activeKey={this.props.selectedNavIndex} onSelect={this.props.changeIndex}>
               <NavItem eventKey={0}>
                 <h3>About</h3>
               </NavItem>

@@ -27,11 +27,10 @@ class Projects extends React.Component {
     render() {
         return (
             <div className="content-area">
-                <h2>Projects</h2>
-                <ul className="list-of-projects">
+                <div className="list-of-projects">
                     {Object.keys(this.state.projects).map(key => <Project key={key} details={this.state.projects[key]}/>)
 }
-                </ul>
+                </div>
             </div>
         );
     }
