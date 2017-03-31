@@ -1,7 +1,12 @@
 import React from 'react';
 import Project from './Project';
 
-import projectList from './project-data';
+import {
+    filterRepos
+}
+from '/home/ubuntu/workspace/src/helpers';
+
+import axios from 'axios';
 
 class Projects extends React.Component {
 
@@ -11,7 +16,7 @@ class Projects extends React.Component {
     }
 
     state = {
-        projects: {}
+        repos: {}
     }
 
     componentDidMount() {
@@ -19,16 +24,21 @@ class Projects extends React.Component {
     }
 
     loadProjects = () => {
-        this.setState({
-            projects: projectList
-        });
+        axios.get('https://api.github.com/users/Kriegerfaust88/repos?type=owner')
+            .then(res => {
+                var repos = filterRepos(res.data);
+                console.log(repos);
+                this.setState({
+                    repos
+                });
+            });
     }
 
     render() {
         return (
             <div className="content-area">
                 <div className="list-of-projects">
-                    {Object.keys(this.state.projects).map(key => <Project key={key} details={this.state.projects[key]}/>)
+                    {Object.keys(this.state.repos).map(key => <Project key={key} details={this.state.repos[key]}/>)
 }
                 </div>
             </div>
