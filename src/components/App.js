@@ -5,7 +5,8 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import Content from './content/Content';
 import Title from './Title';
 import Navigation from './Navigation';
-import SocialBar from './SocialBar';
+import Footer from './Footer';
+import Header from './Header';
 
 class App extends Component {
 
@@ -26,7 +27,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Grid>
+                
+                <Grid className="contentGrid">
                     <Row>
                         <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
                             <Title/>
@@ -40,12 +42,8 @@ class App extends Component {
                             </Row>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col className="social-column">
-                            <SocialBar/>
-                        </Col>
-                    </Row>
                 </Grid>
+                <Footer />
             </div>
         );
     }

@@ -17,11 +17,11 @@ class Project extends React.Component {
         if (this.state.open) {
             button = <Button className="collapseButton" onClick={() => this.setState({
                 open: !this.state.open
-            })}>&#8963;</Button>;
+            })}><span className="glyphicon glyphicon-minus"></span></Button>;
         } else {
             button = <Button className="expandButton" onClick={() => this.setState({
                 open: !this.state.open
-            })}>&#8964;</Button>;
+            })}><span className="glyphicon glyphicon-plus"></span></Button>;
         }
 
         const {details} = this.props;

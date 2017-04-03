@@ -4,12 +4,33 @@ body {
 
 .App {
   background-color: #333333;
-  padding: 20px;
-  padding-bottom: 50px;
-  margin-top: 50px;
-  /*min-height: 600px;*/
-  min-height: 500px;
+  margin-top: 30px;
   color: white;
+}
+
+.header {
+  background-color: #232323;
+}
+
+.contentGrid {
+  min-height: 600px;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #232323;
+  text-align: center;
+}
+
+.socialMediaList {
+  float: center;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.socialMediaList li {
+  display: inline-block;
 }
 
 .title-area {
@@ -79,13 +100,14 @@ body {
   color: white;
   background-color: #232323;
   float: right;
+  font-family: bebas-neue-regular;
 }
 
 a {
   color: #60ccff;
 }
 
-.social-column {
+.socialBar {
   background-color: #232323;
 }
 
