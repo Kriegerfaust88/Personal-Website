@@ -9,7 +9,7 @@ class Title extends React.Component {
                 <h1>
                     Daniel Schroeder
                 </h1>
-                <Image src={profilePic} circle responsive/>
+                <Image className="title-image" src={profilePic} circle responsive/>
             </div>
             );
     }
