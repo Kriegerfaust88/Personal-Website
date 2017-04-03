@@ -1,5 +1,5 @@
 body {
-  background-color: #333333;
+  background-color: #232323;
 }
 
 .App {
@@ -9,6 +9,7 @@ body {
   margin-top: 50px;
   /*min-height: 600px;*/
   min-height: 500px;
+  color: white;
 }
 
 .title-area {
@@ -74,7 +75,7 @@ body {
   background-color: #232323;
 }
 
-.projectExpandButton {
+.projectExpandButton, .expandButton, .collapseButton {
   color: white;
   background-color: #232323;
   float: right;
@@ -82,6 +83,10 @@ body {
 
 a {
   color: #60ccff;
+}
+
+.social-column {
+  background-color: #232323;
 }
 
 @font-face {

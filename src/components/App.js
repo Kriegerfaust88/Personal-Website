@@ -5,6 +5,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import Content from './content/Content';
 import Title from './Title';
 import Navigation from './Navigation';
+import SocialBar from './SocialBar';
 
 class App extends Component {
 
@@ -37,6 +38,11 @@ class App extends Component {
                             <Row>
                                 <Content selectedNavIndex={this.state.selectedNavIndex}/>
                             </Row>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="social-column">
+                            <SocialBar/>
                         </Col>
                     </Row>
                 </Grid>
