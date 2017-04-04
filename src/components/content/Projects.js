@@ -41,6 +41,7 @@ class Projects extends React.Component {
                     {Object.keys(this.state.repos).map(key => <Project key={key} details={this.state.repos[key]}/>)
 }
                 </div>
+                
             </div>
         );
     }

@@ -17,7 +17,7 @@ a {
 }
 
 .contentGrid {
-  min-height: 65vh;
+  min-height: 60vh;
 }
 
 .footer {
@@ -34,6 +34,10 @@ a {
 
 .socialMediaList li {
   display: inline-block;
+}
+
+.btn i {
+  size: 1vh;
 }
 
 .title-area h1{
@@ -105,9 +109,7 @@ a {
   font-family: bebas-neue-regular;
 }
 
-.socialBar {
-  background-color: #232323;
-}
+
 
 @font-face {
   font-family: "bebas-neue-regular";

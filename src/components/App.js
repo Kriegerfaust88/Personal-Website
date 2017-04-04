@@ -6,7 +6,6 @@ import Content from './content/Content';
 import Title from './Title';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import Header from './Header';
 
 class App extends Component {
 
