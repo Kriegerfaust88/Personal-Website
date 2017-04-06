@@ -1,10 +1,17 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {BrowserRouter, Match, Miss} from 'react-router';
+import {
+    render
+}
+from 'react-dom';
+import {
+    BrowserRouter,
+    Match,
+    Miss
+}
+from 'react-router';
 
 import App from './components/App';
 import NotFound from './components/NotFound';
-import AppRoutes from './components/AppRoutes';
 import './css/index.css';
 
 const Root = () => {
@@ -19,4 +26,4 @@ const Root = () => {
 }
 
 render(
-    <AppRoutes/>, document.querySelector('#root'));
+    <Root/>, document.querySelector('#root'));

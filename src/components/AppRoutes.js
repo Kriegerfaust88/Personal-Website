@@ -1,6 +1,13 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {
+    render
+}
+from 'react-dom';
+import {
+    BrowserRouter as Router,
+    Route
+}
+from 'react-router';
 import routes from '../routes';
 
 export default class AppRoutes extends React.Component {
