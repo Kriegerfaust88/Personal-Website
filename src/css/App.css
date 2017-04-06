@@ -17,7 +17,8 @@ a {
 }
 
 .contentGrid {
-  min-height: 60vh;
+  min-height: 75vh;
+  padding-bottom: 5vh;
 }
 
 .footer {
