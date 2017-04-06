@@ -9,7 +9,7 @@ app.get('*', (req, res) => {
    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
