@@ -19,14 +19,14 @@ class App extends Component {
     }
 
     changeIndex(newIndex) {
-        var selectedNavIndex = newIndex;
+        const selectedNavIndex = newIndex;
         this.setState({selectedNavIndex});
     }
 
     render() {
         return (
             <div className="App">
-                
+
                 <Grid className="contentGrid">
                     <Row>
                         <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
@@ -42,7 +42,7 @@ class App extends Component {
                         </Col>
                     </Row>
                 </Grid>
-                <Footer />
+                <Footer/>
             </div>
         );
     }
