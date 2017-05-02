@@ -16,7 +16,7 @@ class Projects extends React.Component {
     }
 
     state = {
-        repos: {}
+        repoList: {}
     }
 
     componentDidMount() {
@@ -26,10 +26,9 @@ class Projects extends React.Component {
     loadProjects = () => {
         axios.get('https://api.github.com/users/Kriegerfaust88/repos?type=owner')
             .then(res => {
-                var repos = filterRepos(res.data);
-                console.log(repos);
+                var repoList = filterRepos(res.data);
                 this.setState({
-                    repos
+                    repoList
                 });
             });
     }
@@ -38,10 +37,9 @@ class Projects extends React.Component {
         return (
             <div className="content-area">
                 <div className="list-of-projects">
-                    {Object.keys(this.state.repos).map(key => <Project key={key} details={this.state.repos[key]}/>)
+                    {Object.keys(this.state.repoList).map(key => <Project key={key} details={this.state.repoList[key]}/>)
 }
                 </div>
-                
             </div>
         );
     }

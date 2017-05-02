@@ -42,11 +42,13 @@ class ContactForm extends React.Component {
             if (params.hasOwnProperty(property)) {
                 queryString.push(encodeURIComponent(property) + '=' + encodeURIComponent(params[property]));
             }
-        return queryString.join('&');
+        const completedQueryString = queryString.join('&');
+        console.log(completedQueryString);
+        return completedQueryString;
     }
 
     sendFormData() {
-        console.log("Sending form data...");
+
 
         //Retrieve form values
         const formData = {
@@ -55,22 +57,24 @@ class ContactForm extends React.Component {
             message: this.state.message
         };
 
+        console.log(formData);
+
         //Send the form data
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = () => {
             if (xmlhttp.readyState === 4) {
-                console.log(xmlhttp);
-                console.log(xmlhttp.responseText);
-                const response = JSON.parse(xmlhttp.responseText);
-                if (xmlhttp.status === 200 && response.status === 'OK') {
+                if (xmlhttp.status === 200 && xmlhttp.statusText === 'OK') {
                     console.log('Success');
                 } else {
                     console.log('Error');
                 }
             }
         };
+        console.log('Opening xmlhttp...');
         xmlhttp.open('POST', 'send', true);
+        console.log('Setting Request header...');
         xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        console.log("Sending form data...");
         xmlhttp.send(this.requestBuildQueryString(formData));
     }
 
