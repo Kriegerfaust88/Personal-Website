@@ -23,7 +23,7 @@ app.post('/send', function(req, res) {
     service: 'gmail',
     auth: {
       user: 'dschroeder101@gmail.com',
-      pass: ***REMOVED***
+      pass: ''
     }
   });
 
