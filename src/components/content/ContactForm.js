@@ -48,16 +48,12 @@ class ContactForm extends React.Component {
     }
 
     sendFormData() {
-
-
         //Retrieve form values
         const formData = {
             name: this.state.name,
             email: this.state.email,
             message: this.state.message
         };
-
-        console.log(formData);
 
         //Send the form data
         const xmlhttp = new XMLHttpRequest();
@@ -70,11 +66,8 @@ class ContactForm extends React.Component {
                 }
             }
         };
-        console.log('Opening xmlhttp...');
         xmlhttp.open('POST', 'send', true);
-        console.log('Setting Request header...');
         xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        console.log("Sending form data...");
         xmlhttp.send(this.requestBuildQueryString(formData));
     }
 

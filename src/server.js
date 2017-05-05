@@ -13,8 +13,8 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
-app.post('/send', function(req, res) {
-
+app.post('/send', (req, res) => {
+  console.log(req.body);
   var name = req.body.name;
   var email = req.body.email;
   var message = req.body.message;
@@ -23,7 +23,7 @@ app.post('/send', function(req, res) {
     service: 'gmail',
     auth: {
       user: 'dschroeder101@gmail.com',
-      pass: ***REMOVED***
+      pass: ''
     }
   });
 
