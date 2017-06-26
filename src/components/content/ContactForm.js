@@ -1,5 +1,11 @@
 import React from 'react';
-import {FormGroup, FormControl, ControlLabel, Button} from 'react-bootstrap';
+import {
+    FormGroup,
+    FormControl,
+    ControlLabel,
+    Button
+}
+from 'react-bootstrap';
 
 class ContactForm extends React.Component {
 
@@ -19,15 +25,21 @@ class ContactForm extends React.Component {
     }
 
     handleNameChange(e) {
-        this.setState({name: e.target.value});
+        this.setState({
+            name: e.target.value
+        });
     }
 
     handleEmailChange(e) {
-        this.setState({email: e.target.value});
+        this.setState({
+            email: e.target.value
+        });
     }
 
     handleMessageChange(e) {
-        this.setState({message: e.target.value});
+        this.setState({
+            message: e.target.value
+        });
     }
 
     handleSubmit(event) {
@@ -61,7 +73,8 @@ class ContactForm extends React.Component {
             if (xmlhttp.readyState === 4) {
                 if (xmlhttp.status === 200 && xmlhttp.statusText === 'OK') {
                     console.log('Success');
-                } else {
+                }
+                else {
                     console.log('Error');
                 }
             }

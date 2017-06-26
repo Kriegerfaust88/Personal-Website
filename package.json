@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "amdefine": "^1.0.1",
     "axios": "^0.15.3",
     "body-parser": "^1.17.1",
     "emailjs": "^1.0.8",
+    "has-flag": "^2.0.0",
     "morgan": "^1.8.1",
     "nodemailer": "^4.0.1",
     "react": "^15.4.2",
@@ -13,16 +15,20 @@
     "react-dom": "^15.4.2",
     "react-router": "4.0.0-alpha.3",
     "react-router-dom": "^4.0.0",
+    "repeating": "^3.0.0",
     "yarn": "^0.24.5"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
+    "gh-pages": "^1.0.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "deploy": "npm run build&&gh-pages -d build"
+  },
+  "homepage": "https://Kriegerfaust88.github.io/Personal-Website"
 }
