@@ -1,39 +1,18 @@
 import React from 'react';
-import {Panel, Button} from 'react-bootstrap';
+import {Panel} from 'react-bootstrap';
 
 class Project extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            open: false
-        };
-    }
-
     render() {
-
-        let button = null;
-
-        if (this.state.open) {
-            button = <Button className="collapseButton" onClick={() => this.setState({
-                open: !this.state.open
-            })}><span className="glyphicon glyphicon-minus"></span></Button>;
-        } else {
-            button = <Button className="expandButton" onClick={() => this.setState({
-                open: !this.state.open
-            })}><span className="glyphicon glyphicon-plus"></span></Button>;
-        }
-
         const {details} = this.props;
-
         return (
             <div>
-                <h2>{details.name}
-                    <span>{button}</span>
+                <h2>
+                    {details.name}
                 </h2>
-                <Panel className="projectPanel" collapsible expanded={this.state.open}>
+                <Panel className="projectPanel">
                     <p className="project-description">{details.description}</p>
-                    <p>URL: <a href={details.homepage}>{details.homepage}</a></p>
+                    <p><a href={details.homepage}>{details.homepage}</a></p>
                     <p>Check it out on <a href={details.svn_url}>GitHub</a></p>
                 </Panel>
             </div>

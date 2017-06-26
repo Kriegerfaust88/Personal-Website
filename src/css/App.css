@@ -9,7 +9,7 @@ a {
 .App {
   background-color: #333333;
   color: white;
-  padding-top: 5vh;
+  margin-bottom: 15vh;
 }
 
 .header {
@@ -21,16 +21,16 @@ a {
   padding-bottom: 5vh;
 }
 
-.footer {
-  padding: 20px;
+.header {
   background-color: #232323;
-  text-align: center;
+  float: right;
+  width: 100%;
 }
 
 .socialMediaList {
-  align-items: center;
+  float: right;
   text-decoration: none;
-  justify-content: center;
+  margin-right: 25px;
 }
 
 .socialMediaList li {
@@ -39,6 +39,14 @@ a {
 
 .btn i {
   size: 1vh;
+}
+
+.btn-social:hover {
+  color: #286090;
+}
+
+.btn-primary {
+  background-color: #40a0ce;
 }
 
 .title-area h1{
@@ -110,7 +118,9 @@ a {
   font-family: bebas-neue-regular;
 }
 
-
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  background-color: #40a0ce;
+}
 
 @font-face {
   font-family: "bebas-neue-regular";

@@ -5,17 +5,39 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import Content from './content/Content';
 import Title from './Title';
 import Navigation from './Navigation';
-import Footer from './Footer';
+import Header from './Header.js';
+import axios from 'axios';
+
+import {
+    filterRepos
+}
+from '../helpers';
 
 class App extends Component {
 
     constructor() {
         super();
         this.changeIndex = this.changeIndex.bind(this);
+        this.loadProjects = this.loadProjects.bind(this);
     }
 
     state = {
-        selectedNavIndex: 0
+        selectedNavIndex: 0,
+        repoList: {}
+    }
+    
+    componentDidMount() {
+        this.loadProjects();
+    }
+
+    loadProjects = () => {
+        axios.get('https://api.github.com/users/Kriegerfaust88/repos?type=owner')
+            .then(res => {
+                var repoList = filterRepos(res.data);
+                this.setState({
+                    repoList
+                });
+            });
     }
 
     changeIndex(newIndex) {
@@ -26,7 +48,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-
+                <Header/>
                 <Grid className="contentGrid">
                     <Row>
                         <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
@@ -37,12 +59,11 @@ class App extends Component {
                                 <Navigation selectedNavIndex={this.state.selectedNavIndex} changeIndex={this.changeIndex}/>
                             </Row>
                             <Row>
-                                <Content selectedNavIndex={this.state.selectedNavIndex}/>
+                                <Content selectedNavIndex={this.state.selectedNavIndex} repoList={this.state.repoList}/>
                             </Row>
                         </Col>
                     </Row>
                 </Grid>
-                <Footer/>
             </div>
         );
     }
