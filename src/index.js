@@ -22,8 +22,8 @@ const Root = () => {
                 <Miss component={NotFound}/>
             </div>
         </BrowserRouter>
-    )
-}
+    );
+};
 
 render(
     <Root/>, document.querySelector('#root'));

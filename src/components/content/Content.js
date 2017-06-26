@@ -7,15 +7,13 @@ import Contact from './Contact';
 class Content extends React.Component {
     render() {
         switch (this.props.selectedNavIndex) {
-
-            default:
-                return (<About/>)
+            default: return (<About/>);
             case 0:
-                return (<About/>);
+                    return (<About/>);
             case 1:
-                return (<Projects logo={this.props.logo}/>);
+                    return (<Projects repoList={this.props.repoList}/>);
             case 2:
-                return (<Contact/>);
+                    return (<Contact/>);
         }
     }
 }
