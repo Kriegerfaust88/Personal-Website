@@ -2,15 +2,21 @@ const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const helpers = require('./helpers');
 
 const app = express();
 
+const pass = helpers.getPass();
+console.log(pass);
+
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
 app.post('/send', (req, res) => {
@@ -18,6 +24,8 @@ app.post('/send', (req, res) => {
   var name = req.body.name;
   var email = req.body.email;
   var message = req.body.message;
+
+  console.log();
 
   let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -35,12 +43,16 @@ app.post('/send', (req, res) => {
   }
 
   transporter.sendMail(mailOptions, function(error, info) {
-    if(error) {
+    if (error) {
       console.log(error);
-      res.json({yo: 'error'});
+      res.json({
+        yo: 'error'
+      });
     } else {
       console.log('Message sent: ' + info.response);
-      res.json({yo: info.response});
+      res.json({
+        yo: info.response
+      });
     };
   })
 });
@@ -48,5 +60,5 @@ app.post('/send', (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 })
