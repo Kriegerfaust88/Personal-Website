@@ -13,7 +13,7 @@ class Content extends React.Component {
             case 1:
                     return (<Projects repoList={this.props.repoList}/>);
             case 2:
-                    return (<Contact/>);
+                    return (<Contact toggleMessageNotification={this.props.toggleMessageNotification}/>);
         }
     }
 }

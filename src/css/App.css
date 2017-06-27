@@ -7,9 +7,15 @@ a {
 }
 
 .App {
-  background-color: #333333;
   color: white;
-  margin-bottom: 15vh;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.jumbotron {
+  background-color: #333333;
 }
 
 .header {
@@ -18,7 +24,6 @@ a {
 
 .contentGrid {
   min-height: 75vh;
-  padding-bottom: 5vh;
 }
 
 .header {
@@ -28,9 +33,9 @@ a {
 }
 
 .socialMediaList {
-  float: right;
+  align-items: center;
   text-decoration: none;
-  margin-right: 25px;
+  justify-content: center;
 }
 
 .socialMediaList li {
@@ -49,10 +54,23 @@ a {
   background-color: #40a0ce;
 }
 
+control-label {
+  margin-top:10px;
+}
+
+.messageSent {
+  background-color: green;
+  text-align: center;
+}
+
+.noMessage {
+  display: none;
+}
+
 .title-area h1{
   font-family: bebas-neue-regular;
   text-align: center;
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .title-image {
@@ -60,8 +78,13 @@ a {
 }
 
 .navigation {
-  padding: 20px;
+  padding: 10px;
   color: white;
+  margin-right: 10vh;
+}
+
+.content-column {
+  padding-left: 15vh;
 }
 
 .content-area {
@@ -120,6 +143,11 @@ a {
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
   background-color: #40a0ce;
+}
+
+.footer {
+  background-color: #232323;
+  text-align: center;
 }
 
 @font-face {

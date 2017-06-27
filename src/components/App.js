@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import '../css/App.css'
-import {Grid, Row, Col} from 'react-bootstrap';
-
+import {Grid, Row, Col, Jumbotron} from 'react-bootstrap';
 import Content from './content/Content';
 import Title from './Title';
-import Navigation from './Navigation';
 import Header from './Header.js';
+import Footer from './Footer.js';
+import MessageSent from './MessageSent.js';
 import axios from 'axios';
 
 import {
@@ -19,11 +19,13 @@ class App extends Component {
         super();
         this.changeIndex = this.changeIndex.bind(this);
         this.loadProjects = this.loadProjects.bind(this);
+        this.toggleMessageNotification = this.toggleMessageNotification.bind(this);
     }
 
     state = {
         selectedNavIndex: 0,
-        repoList: {}
+        repoList: {},
+        messageSent: false
     }
     
     componentDidMount() {
@@ -45,25 +47,40 @@ class App extends Component {
         this.setState({selectedNavIndex});
     }
 
+    toggleMessageNotification(newVal) {
+        const messageStatus = newVal;
+        this.setState({messageSent: messageStatus});
+    }
+
     render() {
+
+        let messageSent;
+
+        if (this.state.messageSent) {
+            messageSent = <div className="messageSent"><MessageSent /></div>;
+        } else {
+            messageSent = <div className="noMessage"><MessageSent /></div>;
+        }
+
         return (
             <div className="App">
-                <Header/>
+                <Jumbotron>
+                <Header selectedNavIndex={this.state.selectedNavIndex} changeIndex={this.changeIndex}/>
+                <div>{messageSent}</div>
                 <Grid className="contentGrid">
                     <Row>
                         <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
                             <Title/>
                         </Col>
-                        <Col className="nav-column" xs={12} sm={8} md={8} lg={8}>
+                        <Col className="content-column" xs={12} sm={8} md={8} lg={8}>
                             <Row>
-                                <Navigation selectedNavIndex={this.state.selectedNavIndex} changeIndex={this.changeIndex}/>
-                            </Row>
-                            <Row>
-                                <Content selectedNavIndex={this.state.selectedNavIndex} repoList={this.state.repoList}/>
+                                <Content selectedNavIndex={this.state.selectedNavIndex} repoList={this.state.repoList} toggleMessageNotification={this.state.toggleMessageNotification}/>
                             </Row>
                         </Col>
                     </Row>
                 </Grid>
+                </Jumbotron>
+                <Footer/>
             </div>
         );
     }

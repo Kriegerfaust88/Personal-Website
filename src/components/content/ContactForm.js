@@ -10,6 +10,7 @@ class ContactForm extends React.Component {
         this.handleMessageChange = this.handleMessageChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.sendFormData = this.sendFormData.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
 
     state = {
@@ -34,6 +35,15 @@ class ContactForm extends React.Component {
         console.log("Submit clicked...")
         event.preventDefault();
         this.sendFormData();
+        this.props.toggleMessageNotification(true);
+    }
+
+    resetForm() {
+        this.setState({
+            name: '',
+            email: '',
+            message: ''
+        })
     }
 
     requestBuildQueryString(params) {
@@ -47,7 +57,7 @@ class ContactForm extends React.Component {
         return completedQueryString;
     }
 
-    sendFormData() {
+    sendFormData = () => {
         //Retrieve form values
         const formData = {
             name: this.state.name,
@@ -61,6 +71,7 @@ class ContactForm extends React.Component {
             if (xmlhttp.readyState === 4) {
                 if (xmlhttp.status === 200 && xmlhttp.statusText === 'OK') {
                     console.log('Success');
+                    this.resetForm();
                 } else {
                     console.log('Error');
                 }

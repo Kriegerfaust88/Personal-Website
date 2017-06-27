@@ -6,7 +6,10 @@ class Contact extends React.Component {
         return (
             <div className="content-area">
                 <h2>Contact</h2>
-                <ContactForm></ContactForm>
+                <p>
+                    Please fill out your contact information and message, and I'll get back to you as soon as possible!
+                </p>
+                <ContactForm toggleMessageNotification={this.props.toggleMessageNotification}></ContactForm>
             </div>
         );
     }

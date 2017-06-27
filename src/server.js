@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-let PASS;
+let pass;
 
 getPass = () => {
   var fs = require('fs'),
@@ -23,7 +23,7 @@ getPass = () => {
     encoding: 'utf-8'
   }, function(err, data) {
     if (!err) {
-      PASS = data;
+      pass = data;
     } else {
       console.log(err);
     }
@@ -42,13 +42,11 @@ app.post('/send', (req, res) => {
   var email = req.body.email;
   var message = req.body.message;
 
-  console.log(PASS);
-
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'dschroeder101@gmail.com',
-      pass: `${PASS}`
+      pass: `${pass}`
     }
   });
 
