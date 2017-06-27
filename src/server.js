@@ -6,14 +6,31 @@ const helpers = require('./helpers');
 
 const app = express();
 
-const pass = helpers.getPass();
-console.log(pass);
-
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+let PASS;
+
+getPass = () => {
+  var fs = require('fs'),
+    path = require('path'),
+    filePath = path.join(__dirname, 'config.txt');
+
+  fs.readFile(filePath, {
+    encoding: 'utf-8'
+  }, function(err, data) {
+    if (!err) {
+      PASS = data;
+    } else {
+      console.log(err);
+    }
+  });
+}
+
+getPass();
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
@@ -25,13 +42,13 @@ app.post('/send', (req, res) => {
   var email = req.body.email;
   var message = req.body.message;
 
-  console.log();
+  console.log(PASS);
 
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'dschroeder101@gmail.com',
-      pass: ''
+      pass: `${PASS}`
     }
   });
 

@@ -1,5 +1,4 @@
 //Returns repos that are not a Fork and are classified as JavaScript Project
-
 exports.filterRepos = (repos) => {
   return repos.filter(isFork).filter(isJS);
 }
@@ -13,7 +12,6 @@ exports.getPass = () => {
     encoding: 'utf-8'
   }, function(err, data) {
     if (!err) {
-      console.log(data);
       return data;
     } else {
       console.log(err);
