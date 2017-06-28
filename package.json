@@ -10,6 +10,7 @@
     "heroku": "^0.2.0",
     "morgan": "^1.8.1",
     "nodemailer": "^4.0.1",
+    "nvm": "^0.0.4",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.6.0",
     "react-bootstrap": "^0.30.8",
