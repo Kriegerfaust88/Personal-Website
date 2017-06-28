@@ -17,11 +17,11 @@
     "react-dom": "^15.4.2",
     "react-router": "4.0.0-alpha.3",
     "react-router-dom": "^4.0.0",
-    "yarn": "^0.24.5"
+    "yarn": "^0.24.5",
+    "react-scripts": "0.9.5"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "react-scripts": "0.9.5"
+    "babel-cli": "^6.24.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,5 +31,8 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://Kriegerfaust88.github.io/my-app"
+  "homepage": "https://Kriegerfaust88.github.io/my-app",
+  "engines": {
+    "node": "8.1.2"
+  }
 }
