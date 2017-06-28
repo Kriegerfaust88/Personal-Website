@@ -35,8 +35,6 @@ class ContactForm extends React.Component {
         console.log("Submit clicked...")
         event.preventDefault();
         this.sendFormData();
-        
-        //window.setTimeout(this.props.toggleMessageNotification(false), 3000);
     }
 
     resetForm() {
@@ -74,7 +72,7 @@ class ContactForm extends React.Component {
                     console.log('Success');
                     this.resetForm();
                     this.props.toggleMessageNotification(true);
-                    setTimeout(function() {this.props.toggleMessageNotification(false)}.bind(this), 5000);
+                    setTimeout(() => {this.props.toggleMessageNotification(false)}, 5000);
                 } else {
                     console.log('Error');
                 }
