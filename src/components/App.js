@@ -8,6 +8,7 @@ import Footer from './Footer.js';
 import MessageSent from './MessageSent.js';
 import axios from 'axios';
 
+
 import {
     filterRepos
 }
@@ -65,20 +66,20 @@ class App extends Component {
         return (
             <div className="App">
                 <Jumbotron>
-                <Header selectedNavIndex={this.state.selectedNavIndex} changeIndex={this.changeIndex}/>
-                <div>{messageSent}</div>
-                <Grid className="contentGrid">
-                    <Row>
-                        <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
-                            <Title/>
-                        </Col>
-                        <Col className="content-column" xs={12} sm={8} md={8} lg={8}>
-                            <Row>
-                                <Content selectedNavIndex={this.state.selectedNavIndex} repoList={this.state.repoList} toggleMessageNotification={this.state.toggleMessageNotification}/>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Grid>
+                    <Header selectedNavIndex={this.state.selectedNavIndex} changeIndex={this.changeIndex}/>
+                    <div>{messageSent}</div>
+                    <Grid className="contentGrid">
+                        <Row>
+                            <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
+                                <Title/>
+                            </Col>
+                            <Col className="content-column" xs={12} sm={8} md={8} lg={8}>
+                                <Row>
+                                    <Content selectedNavIndex={this.state.selectedNavIndex} repoList={this.state.repoList} toggleMessageNotification={this.toggleMessageNotification}/>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Grid>
                 </Jumbotron>
                 <Footer/>
             </div>
