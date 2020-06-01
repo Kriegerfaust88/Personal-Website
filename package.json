@@ -33,7 +33,7 @@
   },
   "homepage": "https://Kriegerfaust88.github.io/my-app",
   "engines": {
-    "node": "8.1.2"
+    "node": "10.19.0"
   },
   "browserslist": {
     "production": [
