@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormGroup, FormControl, ControlLabel, Button} from 'react-bootstrap';
+import {FormGroup, FormControl, FormLabel, Button} from 'react-bootstrap';
 
 class ContactForm extends React.Component {
 
@@ -87,17 +87,17 @@ class ContactForm extends React.Component {
         return (
             <form action="" onSubmit={this.handleSubmit}>
                 <FormGroup>
-                    <ControlLabel>
+                    <FormLabel>
                         Name
-                    </ControlLabel>
+                    </FormLabel>
                     <FormControl required type="text" value={this.state.name} placeholder="Enter your name" onChange={this.handleNameChange}></FormControl>
-                    <ControlLabel>
+                    <FormLabel>
                         Email address
-                    </ControlLabel>
+                    </FormLabel>
                     <FormControl required type="text" value={this.state.email} placeholder="Enter your email address" onChange={this.handleEmailChange}></FormControl>
-                    <ControlLabel>
+                    <FormLabel>
                         Message
-                    </ControlLabel>
+                    </FormLabel>
                     <FormControl required componentClass="textarea" rows="4" type="text" value={this.state.message} placeholder="Enter your message" onChange={this.handleMessageChange}></FormControl>
                 </FormGroup>
                 <Button className="btn btn-primary" type="submit">

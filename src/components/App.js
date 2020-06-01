@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../css/App.css'
-import {Grid, Row, Col, Jumbotron} from 'react-bootstrap';
+import {Container, Row, Col, Jumbotron} from 'react-bootstrap';
 import Content from './content/Content';
 import Title from './Title';
 import Header from './Header.js';
@@ -68,7 +68,7 @@ class App extends Component {
                 <Jumbotron>
                     <Header selectedNavIndex={this.state.selectedNavIndex} changeIndex={this.changeIndex}/>
                     <div>{messageSent}</div>
-                    <Grid className="contentGrid">
+                    <Container className="contentGrid">
                         <Row>
                             <Col className="title-column" xs={12} sm={4} md={4} lg={4}>
                                 <Title/>
@@ -79,7 +79,7 @@ class App extends Component {
                                 </Row>
                             </Col>
                         </Row>
-                    </Grid>
+                    </Container>
                 </Jumbotron>
                 <Footer/>
             </div>
